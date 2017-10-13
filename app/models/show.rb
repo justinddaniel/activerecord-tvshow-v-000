@@ -3,4 +3,8 @@ class Show < ActiveRecord::Base
     Show.maximum(:rating)
   end
 
+  def self.most_popular_show
+    Show.order(rating: :desc).limit(1)
+  end
+
 end
